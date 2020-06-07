@@ -7,7 +7,7 @@ module Concerns::Persistable
 
   module ClassMethods
     def destroy_all
-      self.all.clear
+      all.clear
     end
   end
 end
