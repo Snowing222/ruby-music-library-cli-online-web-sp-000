@@ -89,7 +89,7 @@ end
    puts "Which song number would you like to play?"
    number=gets.to_i
    if number>0 && number<=Song.all.length
-     song=Song.all.sort{ |a, b| a.name <=> b.name }[number-1]
+     song=Song.all.sort_by { |x| x.name }[number-1]
      puts "Playing #{song.name} by #{song.artist.name}"
    end
  end
