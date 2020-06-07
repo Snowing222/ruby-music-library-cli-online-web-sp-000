@@ -34,7 +34,7 @@ class Song
     file=file_name.gsub(".mp3","")
     artist_name=file.split(" - ")[0]
     song_name=file.split(" - ")[1]
-    genre_name=file_name.split(" - ")[2]
+    genre_name=file.split(" - ")[2]
     @name=song_name
     artist=Artist.find_or_create_by_name(artist_name)
     genre=Genre.find_or_create_by_name(genre_name)
