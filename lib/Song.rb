@@ -17,7 +17,7 @@ class Song
     artist.add_song(self)
   end
 
-  def genre=(genre) #Special genre att setter
+  def genre=(genre) #Special genre attr setter
     @genre=genre
     genre.songs<<self unless genre.songs.include?(self)
   end
@@ -31,9 +31,10 @@ class Song
   end
 
   def self.new_from_filename(file_name) #Custom constructor
+    file_name.gsub(".mp3","")
     song_name=file_name.split(" - ")[1]
     artist_name=file_name.split(" - ")[0]
-    genre_name=file_name.split(" - ")[2].gsub(".mp3","")
+    genre_name=file_name.split(" - ")[2]
     @name=song_name
     artist=Artist.find_or_create_by_name(artist_name)
     genre=Genre.find_or_create_by_name(genre_name)
