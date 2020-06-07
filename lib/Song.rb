@@ -25,7 +25,7 @@ class Song
   # def self.all
   #   @@all
   # end
-  #
+  # 
   # def save
   #   self.class.all<<self
   # end
@@ -39,7 +39,7 @@ class Song
     song.save
     song
   end
-  #Real Estate - Green Aisles - country.mp3
+  
   def self.new_from_filename(file_name)
     song_name=file_name.split(" - ")[1]
     artist_name=file_name.split(" - ")[0]
