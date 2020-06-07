@@ -25,10 +25,6 @@ class Genre
     new(name).tap {|o|o.save}
   end
 
-  def songs
-    @songs
-  end
-
   def artists
     songs.map {|song| song.artist}.uniq.compact
   end
