@@ -13,17 +13,15 @@ class Genre
   end
 
   def save
-    @@all<<self
+    self.class.all<<self
   end
 
   def self.destroy_all
-    @@all=[]
+    self.all.clear
   end
 
   def self.create(name)
-    genre=new(name)
-    genre.save
-    genre
+    new(name).tap {|o|o.save}
   end
 
   def songs

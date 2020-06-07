@@ -16,7 +16,7 @@ class MusicLibraryController
 
    input=""
    while input!="exit"
-   input=gets
+   input=gets.strip
    case input
    when "list songs"
      list_songs
