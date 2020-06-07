@@ -3,6 +3,8 @@ class Genre
   attr_reader :songs
   @@all=[]
   extend Concerns::Findable
+  extend Concerns::Persistable::ClassMethods
+  include Concerns::Persistable::InstanceMethods
 
   def initialize(name)
     @name=name
