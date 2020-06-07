@@ -26,18 +26,8 @@ class Song
     @@all
   end
 
-  # def save
-  #   self.class.all<<self
-  # end
-  #
-  # def self.destroy_all
-  #   self.all.clear
-  # end
-
   def self.create(name)
-    song=new(name)
-    song.save
-    song
+    new(name).tap {|o|o.save}
   end
 
   def self.new_from_filename(file_name)
