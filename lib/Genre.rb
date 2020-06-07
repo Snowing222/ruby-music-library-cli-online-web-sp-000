@@ -6,20 +6,20 @@ class Genre
   attr_reader :songs
   @@all=[]
 
-  def initialize(name)
+  def initialize(name) #initialize
     @name=name
     @songs=[]
   end
 
-  def self.all
+  def self.all #class reader
     @@all
   end
 
-  def self.create(name)
+  def self.create(name) #custom constructor
     new(name).tap {|o|o.save}
   end
 
-  def artists
+  def artists #search artists array
     songs.map {|song| song.artist}.uniq.compact
   end
 
