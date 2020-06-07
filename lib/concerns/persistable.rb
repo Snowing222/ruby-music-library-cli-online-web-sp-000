@@ -10,5 +10,4 @@ module Concerns::Persistable
       self.all.clear
     end
   end
-
 end
