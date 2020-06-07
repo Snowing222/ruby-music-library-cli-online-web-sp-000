@@ -32,8 +32,8 @@ class Song
 
   def self.new_from_filename(file_name) #Custom constructor
     file_name.gsub(".mp3","")
-    song_name=file_name.split(" - ")[1]
     artist_name=file_name.split(" - ")[0]
+    song_name=file_name.split(" - ")[1]
     genre_name=file_name.split(" - ")[2]
     @name=song_name
     artist=Artist.find_or_create_by_name(artist_name)
