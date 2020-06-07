@@ -6,16 +6,16 @@ class Artist
   attr_reader :songs
   @@all=[]
 
-  def initialize(name)
+  def initialize(name) #Initialize
     @name=name
     @songs=[]
   end
 
-  def self.all
+  def self.all #Class reader
     @@all
   end
 
-  def self.create(name)
+  def self.create(name) #Custom constructor
     new(name).tap {|o| o.save}
   end
 
