@@ -1,9 +1,10 @@
-require "pry"
 class Artist
+  extend Concerns::Findable
+  extend Concerns::Persistable::ClassMethods
+  include Concerns::Persistable::InstanceMethods
   attr_accessor :name
   attr_reader :songs
   @@all=[]
-  extend Concerns::Findable
 
   def initialize(name)
     @name=name
